@@ -1,10 +1,20 @@
 front-end build with react, back-end with dockerize node server and postgres database.
 
-for activate on your localhost - add API keys at src/controllers/weather-hooks/components/APIcall and in server/controllers/image,
-and then 
+for activate on your localhost -
+1. clone this repo
+
+
+2. add your own free API keys from openweathermap.com and clarifi.com at src/controllers/weather-hooks/components/APIcall and in server/controllers/image
+
+3.$ cd Async-Component
 
 $ cd server
+
 $ docker-compose up
-in new terminal
+
+4.in new terminal
+$cd Async-Component
+
 $ npm install
+
 $npm start 
