@@ -1,38 +1,52 @@
 import React, { useState } from 'react';
-import './App.css';
-import About from './components/About';
-import Footer from './components/Footer'
-import AsyncComponent from './components/AsyncComponent'
+import Signin from './components/Signin';
+import AsyncApp from './components/AsyncApp'
+import Register from './components/Register';
 
-function App() {
-   const [route,setRoute] = useState('About');
-  const router = (event) => {
-    setRoute(event)
+function App() { 
+	const [logIn, setLogIn] = useState(false);
+    const [isRegisted, setIsRegisterd] = useState(false);
+    const [user, setUser] = useState({})
+     const loadUser = data => {
+    setUser({
+      id: data.id,
+      name: data.name,
+      email: data.email,
+      entries: data.entries,
+      joined: data.joined
+    })
   }
- switch(route)  {
-  case 'About':
-  return (
-     <div className="App">
-     <About  />
-     <Footer router={router} />
-     </div>)
-  case 'WethWhat':
-      const WethWhat = AsyncComponent(() => import('./components/weather-hooks/WethWhat'));
-  return (
-     <div className="App">
-     <WethWhat />
-     <Footer router={router}/>
-     </div>)
-  case 'Page3':
-     const AsyncPage3 = AsyncComponent(() => import('./components/Page3'));
-  return (
-     <div className="App">
-     <AsyncPage3 />
-     <Footer router={router}/>
-     </div>)
-  default :
-  return <h1> Has been error, pl refresh </h1>
+       switch(logIn){
+    	case true:
+       	return (
+    		<div>    		
+    		<AsyncApp user={user}/>
+    		</div>
+    		)
+       default: 
+       switch(isRegisted){
+    	  case true:
+    	   return (<div><Signin loadUser={loadUser} setLogIn={setLogIn} setIsRegisterd={setIsRegisterd}/></div>)
+    	   default : return (<div><Register loadUser={loadUser} setLogIn={setLogIn} setIsRegisterd={setIsRegisterd}/></div>)
+    
+    
+    }  }
+}
+export default App
 
 
-} }
-export default App;
+  
+
+
+  
+
+
+
+
+
+
+
+
+         
+     
+     

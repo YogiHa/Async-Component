@@ -27,8 +27,8 @@ const phantomStyle = {
     <div>
       <div style={phantomStyle} />
       <div style={footerStyle}>
-     <button value="Page3" onClick={handleClick} className="f6 link dim ph6 pv2 mb2 dib white bg-purple" href="#0">Page3</button>
-     <button value='About' onClick={handleClick} className="f6 link dim ph6 pv2 mb2 dib white bg-purple" href="#0">About</button>
+     <button value="SmartBrain" onClick={handleClick} className="f6 link dim ph6 pv2 mb2 dib white bg-purple" href="#0">Smart-Brain</button>
+     <button value='Home' onClick={handleClick} className="f6 link dim ph6 pv2 mb2 dib white bg-purple" href="#0">Home</button>
     <button value='WethWhat' onClick={handleClick} className="f6 link dim ph6 pv2 mb2 dib white bg-purple" href="#0">WethWhat</button>
       </div>
     </div>

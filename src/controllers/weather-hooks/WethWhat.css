@@ -1,0 +1,13 @@
+h1 {
+	font-family: 'Shadows Into Light', cursive;
+}
+
+h4 {
+	font-family: 'Open Sans', sans-serif;
+}
+
+.WethWhat {
+	 background-image: url("bg.jpg");
+	 background-size: cover;
+	 background-repeat: repeat;
+}
