@@ -8,7 +8,7 @@ import './SmartBrain.css';
 const initialState = {
   input: '',
   imageUrl: '',
-  box: {}
+  boxes: []
    
 }
 
@@ -19,20 +19,23 @@ class SmartBrain extends Component {
   }
 
   calculateFaceLocation = (data) => {
-    const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
+   return data.outputs[0].data.regions.map(face => {
+    const clarifaiFace = face.region_info.bounding_box;
     const image = document.getElementById('inputimage');
     const width = Number(image.width);
     const height = Number(image.height);
-    return {
-      leftCol: clarifaiFace.left_col * width,
-      topRow: clarifaiFace.top_row * height,
-      rightCol: width - (clarifaiFace.right_col * width),
-      bottomRow: height - (clarifaiFace.bottom_row * height)
-    }
+          return {
+        leftCol: clarifaiFace.left_col * width,
+        topRow: clarifaiFace.top_row * height,
+        rightCol: width - (clarifaiFace.right_col * width),
+        bottomRow: height - (clarifaiFace.bottom_row * height)
+      }
+    });
   }
 
-  displayFaceBox = (box) => {
-    this.setState({box: box});
+  displayFaceBox = (boxes) => {
+    this.setState({boxes: boxes});
+   
   }
 
   onInputChange = (event) => {
@@ -62,17 +65,17 @@ class SmartBrain extends Component {
             .then(count => {
               this.setState(Object.assign(this.props.user.user, { entries: count}))
             })
-            .catch(console.log)
+            .catch(console.log('count went wrong'))
 
         }
         this.displayFaceBox(this.calculateFaceLocation(response))
       })
-      .catch(err => console.log(err));
+      .catch(err => console.log('api call wasnt sucssesfull'));
   }
 
   
   render() {
-    const {  imageUrl,  box } = this.state;
+    const {  imageUrl,  boxes } = this.state;
     return (
       <div className="App1">
              <div>
@@ -81,7 +84,7 @@ class SmartBrain extends Component {
                 onInputChange={this.onInputChange}
                 onButtonSubmit={this.onButtonSubmit}
               />
-                 <FaceRecognition box={box} imageUrl={imageUrl} />
+                 <FaceRecognition boxes={boxes} imageUrl={imageUrl} />
             </div>
          
       </div>

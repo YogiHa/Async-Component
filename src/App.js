@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import Signin from './components/Signin';
-import AsyncApp from './components/AsyncApp'
 import Register from './components/Register';
+import AsyncApp from './components/AsyncApp'
 
-function App() { 
+function App() {
 	const [logIn, setLogIn] = useState(false);
     const [isRegisted, setIsRegisterd] = useState(false);
     const [user, setUser] = useState({})

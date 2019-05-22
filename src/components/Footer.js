@@ -14,9 +14,9 @@ function Footer({router}){
 };
 
 const phantomStyle = {
-  display: "block",
-  padding: "50px",
-  height: "10px",
+  display: "fixed",
+  padding: "15%",
+  height: "25%",
   width: "100%"
 };
    const handleClick = e => {
@@ -27,9 +27,9 @@ const phantomStyle = {
     <div>
       <div style={phantomStyle} />
       <div style={footerStyle}>
-     <button value="SmartBrain" onClick={handleClick} className="f6 link dim ph6 pv2 mb2 dib white bg-purple" href="#0">Smart-Brain</button>
-     <button value='Home' onClick={handleClick} className="f6 link dim ph6 pv2 mb2 dib white bg-purple" href="#0">Home</button>
-    <button value='WethWhat' onClick={handleClick} className="f6 link dim ph6 pv2 mb2 dib white bg-purple" href="#0">WethWhat</button>
+     <button value="SmartBrain" onClick={handleClick} className="f2 link dim ph6 pv2 mb2 dib white bg-purple" href="#0">Smart-Brain</button>
+     <button value='Home' onClick={handleClick} className="f2 link dim ph6 pv2 mb2 dib white bg-purple" href="#0">Home</button>
+    <button value='WethWhat' onClick={handleClick} className="f2 link dim ph6 pv2 mb2 dib white bg-purple" href="#0">WethWhat</button>
       </div>
     </div>
   );
