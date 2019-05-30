@@ -11,6 +11,7 @@ const signin = require('./controllers/signin');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 const location = require('./controllers/location');
+const auth =require('./controllers/auth');
 
 const db = knex({
   client: 'pg',
@@ -19,17 +20,28 @@ const db = knex({
 
 const app = express();
 
-app.use(morgan('combined'))
-app.use(cors())
+const whiteList = ['http://localhost:3001'];
+const corsOptions = {
+	origin: function(origin, callback) {
+		if (whiteList.indexOf(origin) !== -1) {
+			callback(null, true)
+		} else {
+			callback(new Error('NOT ALLOWED'))
+		}
+	}
+}
+
+app.use(morgan('combined'));
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
-app.get('/', (req, res)=> { res.send(db.users) })
-app.post('/signin', signin.handleSignin(db, bcrypt))
-app.post('/register', (req, res) => { register.handleRegister(req, res, db, bcrypt) })
-app.get('/profile/:id', (req, res) => { profile.handleProfileGet(req, res, db)})
-app.put('/image', (req, res) => { image.handleImage(req, res, db)})
-app.put('/location', (req, res) =>{location.handleLocation(req, res, db)})
-app.post('/imageurl', (req, res) => { image.handleApiCall(req, res)})
+app.post('/signin', signin.signinAuth(db, bcrypt))
+app.post('/register', (req, res) =>{register.handleRegister(req, res, db, bcrypt)})
+app.get('/profile/:id', auth.requireAuth, (req, res) => { profile.handleProfileGet(req, res, db)})
+app.post('/profile/:id', auth.requireAuth, (req, res) =>{ profile.handleProfileUpdate(req, res, db)})
+app.put('/image', auth.requireAuth, (req, res) => { image.handleImage(req, res, db)})
+app.put('/location', auth.requireAuth, (req, res) =>{location.handleLocation(req, res, db)})
+app.post('/imageurl', auth.requireAuth, (req, res) => { image.handleApiCall(req, res)})
 
 app.listen(3000, ()=> {
   console.log('app is running on port 3000');

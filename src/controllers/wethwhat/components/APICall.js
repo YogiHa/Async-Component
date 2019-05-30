@@ -1,0 +1,19 @@
+import React, { useState , useEffect } from "react";
+import axios from 'axios';
+import Display from './Display';
+
+function APICall({location, updateCount, updateList}){
+	let ignore = false;
+	const [data, setData] = useState([]);
+	const apiKey = //YOUR APIKEY GOES HERE
+	useEffect(()=> {
+		async function fetchData() {
+      const result = await axios(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${location.text}&units=metric&appid=${apiKey}`)
+	  if (!ignore) setData(result.data); updateCount(); updateList(location.text)   }
+    if (location.text === undefined) {
+    	return () => {ignore = false}    }
+	 else {fetchData();
+    return () => { ignore = true; }	}}, [location])
+return (data.base === 'stations' ? <Display data={data}/> :  <div> <br/> <br/> waiting for searches </div>) }
+
+export default APICall;

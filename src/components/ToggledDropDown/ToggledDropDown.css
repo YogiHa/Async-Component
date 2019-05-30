@@ -1,0 +1,8 @@
+.end {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.custom {
+	 background: linear-gradient(15deg, #FF5EDF 0%, #04C8DE 100%);
+}

@@ -1,22 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import { Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import App from './App';
-import About from './components/About'
-import E404 from './components/E404'
+import About from './components/singlePages/About'
+import E404 from './components/singlePages/E404'
 import * as serviceWorker from './serviceWorker';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'tachyons';
+import './index.css';
 
 const routing = (
   <Router>
     <div>
-     <nav className="pa3 pa4-ns">
-   <div className="tc pb3">
-    <a className="link dim gray f6 f5-ns dib mr3" href="/" title="Home">Home</a>
-    <a className="link dim gray f6 f5-ns dib mr3" href="About" title="About">About</a>
-    </div>
-</nav>
-      <Switch>
+        <Switch>
         <Route exact path="/" component={App} />
         <Route exact path="/About" component={About} />
          <Route component={E404} />

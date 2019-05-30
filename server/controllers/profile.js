@@ -5,12 +5,28 @@ const handleProfileGet = (req, res, db) => {
       if (user.length) {
         res.json(user[0])
       } else {
-        res.status(400).json('Not found')
+        res.status(400).json('User not found')
       }
     })
     .catch(err => res.status(400).json('error getting user'))
 }
 
+const handleProfileUpdate = (req, res, db) => {
+  const { id } = req.params;
+  const { name } = req.body.formInput;
+    db('users').where({ id })
+  .update({name})
+  .then(resp=> {
+    if (resp) {
+      res.json('ooky dooky') 
+    }
+    else {res.status(400).json('unable to update')}
+  })
+  
+  .catch(err => res.status(400).json('uunable to get name'))
+}
+
 module.exports = {
-  handleProfileGet
+  handleProfileGet,
+  handleProfileUpdate
 }

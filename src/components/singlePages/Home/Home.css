@@ -1,0 +1,20 @@
+.flex {
+	display: flex;
+	
+}
+.end {
+	
+}
+
+
+h1, h2 {
+  font-display: swap;
+  font-family: 'Shadows Into Light', cursive;
+ 
+}
+
+h5 {
+  font-display: swap;
+  font-family: 'Open Sans', sans-serif;
+}
+

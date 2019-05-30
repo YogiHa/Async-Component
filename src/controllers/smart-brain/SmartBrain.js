@@ -46,7 +46,8 @@ class SmartBrain extends Component {
       this.setState({imageUrl: this.state.input});
       fetch('http://localhost:3000/imageurl', {
         method: 'post',
-        headers: {'Content-Type': 'application/json'},
+        headers: {'Content-Type': 'application/json',
+        'Authorization' : window.sessionStorage.getItem('token')},
         body: JSON.stringify({
           input: this.state.input
         })
@@ -58,14 +59,14 @@ class SmartBrain extends Component {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
-              id: this.props.user.user.id
+              id: this.props.user.id
             })
           })
             .then(response => response.json())
             .then(count => {
-              this.setState(Object.assign(this.props.user.user, { entries: count}))
+              this.setState(Object.assign(this.props.user, { entries: count}))
             })
-            .catch(console.log('count went wrong'))
+            .catch(console.log())
 
         }
         this.displayFaceBox(this.calculateFaceLocation(response))
@@ -77,7 +78,7 @@ class SmartBrain extends Component {
   render() {
     const {  imageUrl,  boxes } = this.state;
     return (
-      <div className="App1">
+      <div className="App">
              <div>
               <Logo />
                <ImageLinkForm

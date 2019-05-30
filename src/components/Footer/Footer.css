@@ -1,0 +1,12 @@
+.start {
+	display: flex;
+	justify-content: flex-start;
+	padding: "10%"
+}
+
+.end {
+	display: flex;
+	justify-content: flex-end;
+	padding: "10%"
+}
+
