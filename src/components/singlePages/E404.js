@@ -9,8 +9,8 @@ const E404 = () => {
   </header>
   <p className="fw1 i tc mt4 mt5-l f4 f3-l">Are you looking for one of these?</p>
   <ul className="list tc pl0 w-100 mt5">
-    <li className="dib"><a className="f5 f4-ns link black db pv2 ph3 hover-light-purple" href="/">Home</a></li>
-     <li className="dib"><a className="f5 f4-ns link black db pv2 ph3 hover-light-purple" href="/About">About</a></li>
+    <li className="dib"><a className="f5 f4-ns link black db pv2 ph3 hover-light-purple" href={process.env.PUBLIC_URL + "/"}>Home</a></li>
+     <li className="dib"><a className="f5 f4-ns link black db pv2 ph3 hover-light-purple" href={process.env.PUBLIC_URL + "/About"}>About</a></li>
   </ul>
 </section>
 		)

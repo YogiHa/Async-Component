@@ -24,7 +24,7 @@ export default function ToggledDropDown(info) {
 			    		(<div className="pointer" onClick={toggle}> <NavLink  onClick={event=>{event.preventDefault(); info.setIsRegisterd(false)}} >Register</NavLink> </div>)
 			    		:(<div className="pointer" onClick={toggle}> <NavLink  onClick={event=>{event.preventDefault(); info.setIsRegisterd(true)}} >Sign In</NavLink> </div>)
 			    } 
-			    <div onClick={toggle}> <NavLink  tag={RRNavLink} exact to="/About" >About</NavLink> </div>
+			    <div onClick={toggle}> <NavLink  tag={RRNavLink} exact to={process.env.PUBLIC_URL + "/About"} >About</NavLink> </div>
 			    </DropdownMenu>
 				</Dropdown>
 				</div>)   }

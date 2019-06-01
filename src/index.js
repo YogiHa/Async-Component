@@ -13,8 +13,8 @@ const routing = (
   <Router>
     <div>
         <Switch>
-        <Route exact path="/" component={App} />
-        <Route exact path="/About" component={About} />
+        <Route exact path={process.env.PUBLIC_URL + "/"} component={App} />
+        <Route exact path={process.env.PUBLIC_URL + "/About"} component={About} />
          <Route component={E404} />
       </Switch>
     </div>
