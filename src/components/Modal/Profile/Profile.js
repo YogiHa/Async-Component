@@ -34,6 +34,7 @@ function Profile({setIsProfileOpen, user, setUser}) {
               <div className="mt3">
                 <label className="db fw6 lh-copy f6" htmlFor="user-name"></label>
                 <input
+                aria-label= 'type new name here'
                 onChange={onFormChange}
                   className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-70 hover-black"
                   type="text"

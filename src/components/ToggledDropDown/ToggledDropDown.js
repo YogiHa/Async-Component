@@ -19,7 +19,7 @@ export default function ToggledDropDown(info) {
 				<DropdownMenu right className="b--transparent shadow-5">
 				{ info.isLogedIn ? 
 			      ( <div className="pointer"><div onClick={toggle}> <NavLink  onClick={event=>{event.preventDefault(); info.setIsProfileOpen(true)}} >View Profile</NavLink> </div>
-			      	<div onClick={toggle}> <NavLink onClick={event=>{event.preventDefault(); info.setIsLogedIn(false); info.setIsRegisterd(true); info.setUser({}); window.sessionStorage.clear()}} >Sign Out</NavLink> </div></div>)
+			      	<div onClick={toggle}> <NavLink onClick={event=>{event.preventDefault(); info.setIsLogedIn(false); info.setIsRegisterd(true); info.setUser({}); window.sessionStorage.clear();info.setIsProfileOpen(false)}} >Sign Out</NavLink> </div></div>)
 			    	: info.isRegisterd ?
 			    		(<div className="pointer" onClick={toggle}> <NavLink  onClick={event=>{event.preventDefault(); info.setIsRegisterd(false)}} >Register</NavLink> </div>)
 			    		:(<div className="pointer" onClick={toggle}> <NavLink  onClick={event=>{event.preventDefault(); info.setIsRegisterd(true)}} >Sign In</NavLink> </div>)

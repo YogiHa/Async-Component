@@ -15,7 +15,7 @@ function Input({sendLocation, addItem}){
        <div className='center pa4 br3 shadow-5 form1'>
       <form onSubmit={handleSubmit}>
       <input
-      aria-label= 'type here'
+      aria-label= 'type location here'
        placeholder='search by city name'
         type="text"
         className="f4 pa2 w-70"

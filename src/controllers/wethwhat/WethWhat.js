@@ -45,8 +45,7 @@ const sendLocation = text => {
     return (
       <div className="App">
       <Logo />
-      <h1> WethWhat? </h1>
-      <h5> displaying temprture by just clicking enter! </h5><br/>
+      <h4> displaying temprture by just clicking enter! </h4><br/>
       <Input sendLocation={sendLocation} />
       <APICall location={location} updateCount={updateCount} updateList={updateList} />
       <div>

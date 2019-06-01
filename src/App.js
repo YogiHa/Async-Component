@@ -9,12 +9,12 @@ import Profile from './components/Modal/Profile/Profile'
 import './App.css'
 
 function App() {
-	const [isLogedIn, setIsLogedIn] = useState(false);
+	const [isLogedIn, setIsLogedIn] = useState(true);
     const [isRegisterd, setIsRegisterd] = useState(false);
-    const [user, setUser] = useState({})
+    const [user, setUser] = useState({name: 'john', entries: '1'})
     const [isProfileOpen, setIsProfileOpen] = useState(false)
 
-//particlesjs-config until line 115
+//particlesjs-config until line 80
 
 const particlesOptions = {
     "particles": {
@@ -74,46 +74,9 @@ const particlesOptions = {
         "rotateY": 1200
         }
       }
-  },
-  "interactivity": {
-    "detect_on": "canvas",
-    "events": {
-      "onhover": {
-        "enable": true,
-        "mode": "bubble"
-      },
-      
-      "resize": true
-    },
-    "modes": {
-      "grab": {
-        "distance": 400,
-        "line_linked": {
-          "opacity": 1
-        }
-      },
-      "bubble": {
-        "distance": 133.99274002972194,
-        "size": 44.66424667657398,
-        "duration": 9.744926547616142,
-        "opacity": 0.9501303383925738,
-        "speed": 3
-      },
-      "repulse": {
-        "distance": 200,
-        "duration": 0.4
-      },
-      "push": {
-        "particles_nb": 4
-      },
-      "remove": {
-        "particles_nb": 2
-      }
-    }
-  },
+   },
   "retina_detect": true
 }
-
 
 const fetchBackend = (token) => {
    fetch('http://localhost:3000/signin' , {

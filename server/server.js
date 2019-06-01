@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt-nodejs');
 const cors = require('cors');
 const knex = require('knex');
 const morgan = require('morgan');
-
+const compression = require('compression');
 
 const register = require('./controllers/register');
 const signin = require('./controllers/signin');
@@ -13,12 +13,11 @@ const image = require('./controllers/image');
 const location = require('./controllers/location');
 const auth =require('./controllers/auth');
 
+const app = express();
 const db = knex({
   client: 'pg',
   connection: process.env.POSTGRES_URI
 });
-
-const app = express();
 
 const whiteList = ['http://localhost:3001'];
 const corsOptions = {
@@ -34,6 +33,7 @@ const corsOptions = {
 app.use(morgan('combined'));
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
+app.use(compression())
 
 app.post('/signin', signin.signinAuth(db, bcrypt))
 app.post('/register', (req, res) =>{register.handleRegister(req, res, db, bcrypt)})
