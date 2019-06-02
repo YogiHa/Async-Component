@@ -45,7 +45,7 @@ const sendLocation = text => {
     return (
       <div className="App">
       <Logo />
-       <p className='f3 custom'>
+       <p className='f3 customweth'>
         {'displaying temprture by just clicking enter!'}
       </p><br/>
       <Input sendLocation={sendLocation} />

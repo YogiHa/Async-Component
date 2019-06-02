@@ -1,7 +1,6 @@
 import React from 'react';
 import Tilt from 'react-tilt';
 import wethlogo from './wethlogo.png';
-import './Logo.css';
 
 const Logo = () => {
   return (

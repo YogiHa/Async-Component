@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import HomeLogo from './HomeLogo/HomeLogo';
+import Logo from './Logo';
 import './Home.css';
 function Home({user, setIsProfileOpen}){
 const [card, setCard] = useState(require('./cards/joker.png'));
@@ -23,7 +23,7 @@ useEffect(() =>{
    return (
    	<div className="App">
    	<div className="flex">
-   	<HomeLogo className="start" user={user} setIsProfileOpen={setIsProfileOpen} />
+   	<Logo className="start" user={user} setIsProfileOpen={setIsProfileOpen} />
    	<h1 className="f3 f2-m f1-l fw2 black-90 mv3" > Welcome {user.name}! </h1></div>
    	<div> <img src={card} className="my-bg" alt='card' /> 
    <br/><h3> get points and achieve premium cards by sending requsts to the smart-brain/wethWhat</h3>

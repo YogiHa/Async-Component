@@ -78,7 +78,7 @@ class SmartBrain extends Component {
   render() {
     const {  imageUrl,  boxes } = this.state;
     return (
-      <div className="App">
+      <div className="App SmartBrain">
              <div>
               <Logo />
                <ImageLinkForm

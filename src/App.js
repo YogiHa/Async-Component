@@ -9,9 +9,9 @@ import Profile from './components/Modal/Profile/Profile'
 import './App.css'
 
 function App() {
-	const [isLogedIn, setIsLogedIn] = useState(false);
+	const [isLogedIn, setIsLogedIn] = useState(true);
     const [isRegisterd, setIsRegisterd] = useState(false);
-    const [user, setUser] = useState({})
+    const [user, setUser] = useState({name: "john", entries: 12})
     const [isProfileOpen, setIsProfileOpen] = useState(false)
 
 //particlesjs-config until line 80
@@ -110,7 +110,7 @@ const fetchBackend = (token) => {
  	const token = window.sessionStorage.getItem('token') ; 
       if (token) {
        fetchBackend(token)
-       return() => {console.log('that the way ahah aha')}
+       return() => {console.log()}
       }
      }, [])
  

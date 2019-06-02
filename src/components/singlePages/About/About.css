@@ -1,7 +1,16 @@
-h1 {
-    font-size: 500px;
+.AboutHeader {
   font-display: swap;
   font-family: 'Shadows Into Light', cursive;
   text-decoration-line: underline;
   
+}
+
+.h3about {
+  font-display: swap;
+  font-family: 'Pacifico', cursive;
+ }
+
+.pAbout {
+	font-display: swap;
+	font-family: 'Anton', sans-serif;
 }
