@@ -1,5 +1,5 @@
 .form1 {
-  width: 500px;
+  width: 700px;
   background:
   radial-gradient(circle farthest-side at 0% 50%,#fb1 23.5%,rgba(240,166,17,0) 0)21px 30px,
   radial-gradient(circle farthest-side at 0% 50%,#B71 24%,rgba(240,166,17,0) 0)19px 30px,
@@ -10,4 +10,9 @@
   background-size:40px 60px;
   font-display: swap;
   font-family: 'Shadows Into Light', cursive;
+}
+
+.flexform {
+  display: flex;
+  justify-content: center;
 }
