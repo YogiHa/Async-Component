@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import App from './App';
-import About from './components/singlePages/About'
+import About from './components/singlePages/About/About'
 import E404 from './components/singlePages/E404'
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';

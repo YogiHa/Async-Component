@@ -9,6 +9,9 @@ function Profile({setIsProfileOpen, user, setUser}) {
   }
 
   const onSendingForm = (data) => {
+    if (!data) {
+      return
+    } 
     fetch(`http://localhost:3000/profile/${user.id}`, {
       method: 'post',
       headers: {

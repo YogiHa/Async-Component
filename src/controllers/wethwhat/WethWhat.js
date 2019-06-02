@@ -45,7 +45,9 @@ const sendLocation = text => {
     return (
       <div className="App">
       <Logo />
-      <h4> displaying temprture by just clicking enter! </h4><br/>
+       <p className='f3 custom'>
+        {'displaying temprture by just clicking enter!'}
+      </p><br/>
       <Input sendLocation={sendLocation} />
       <APICall location={location} updateCount={updateCount} updateList={updateList} />
       <div>

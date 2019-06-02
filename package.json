@@ -2,7 +2,7 @@
   "name": "example",
   "version": "0.1.0",
   "private": true,
-    "homepage": "https://YogiHa.github.io/Async-Component",
+  "homepage": "https://YogiHa.github.io/Async-Component",
   "dependencies": {
     "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
@@ -10,14 +10,10 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-particles-js": "^2.6.0",
-    "react-redux": "^7.0.3",
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.0",
     "react-tilt": "^0.1.4",
     "reactstrap": "^8.0.0",
-    "redux": "^4.0.1",
-    "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.3.0",
     "tachyons": "^4.11.1"
   },
   "scripts": {
@@ -44,6 +40,7 @@
     ]
   },
   "devDependencies": {
-    "json-loader": "^0.5.7"
+    "json-loader": "^0.5.7",
+    "react-scrollable-anchor": "^0.6.1"
   }
 }

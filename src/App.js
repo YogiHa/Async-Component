@@ -9,9 +9,9 @@ import Profile from './components/Modal/Profile/Profile'
 import './App.css'
 
 function App() {
-	const [isLogedIn, setIsLogedIn] = useState(true);
+	const [isLogedIn, setIsLogedIn] = useState(false);
     const [isRegisterd, setIsRegisterd] = useState(false);
-    const [user, setUser] = useState({name: 'john', entries: '1'})
+    const [user, setUser] = useState({})
     const [isProfileOpen, setIsProfileOpen] = useState(false)
 
 //particlesjs-config until line 80

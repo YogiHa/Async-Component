@@ -1,8 +1,7 @@
-.custom {
+h1 {
+    font-size: 500px;
   font-display: swap;
   font-family: 'Shadows Into Light', cursive;
+  text-decoration-line: underline;
+  
 }
-
-
-
-
