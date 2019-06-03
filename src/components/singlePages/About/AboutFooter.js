@@ -2,9 +2,7 @@ import React from 'react';
 import { NavLink as RRNavLink } from 'react-router-dom';
 import { NavLink } from 'reactstrap';
 
-import { goToTop } from 'react-scrollable-anchor'
-
-function AboutFooter({}){
+function AboutFooter(){
 	const footerStyle = {
   fontSize: "3rem",
   color: "white",

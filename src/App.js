@@ -9,10 +9,20 @@ import Profile from './components/Modal/Profile/Profile'
 import './App.css'
 
 function App() {
-	const [isLogedIn, setIsLogedIn] = useState(true);
+	const [isLogedIn, setIsLogedIn] = useState(false);
     const [isRegisterd, setIsRegisterd] = useState(false);
-    const [user, setUser] = useState({name: "john", entries: 12})
-    const [isProfileOpen, setIsProfileOpen] = useState(false)
+    const [user, setUser] = useState({})
+    const [isProfileOpen, setIsProfileOpen] = useState(false);
+
+   const loadUser = (data) => {
+    setUser({
+      id: data.id,
+      name: data.name,
+      email: data.email,
+      entries: data.entries,
+      joined: data.joined
+    })
+  }
 
 //particlesjs-config until line 80
 
@@ -131,7 +141,7 @@ const fetchBackend = (token) => {
         <Signin fetchBackend={fetchBackend}  setIsLogedIn={setIsLogedIn} />
         </div> : 
                   <div>
-                  <Register fetchBackend={fetchBackend} setIsLogedIn={setIsLogedIn}/>
+                  <Register setIsLogedIn={setIsLogedIn} loadUser={loadUser} fetchBackend={fetchBackend} setIsLogedIn={setIsLogedIn}/>
                   </div>
       
       
