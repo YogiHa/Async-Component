@@ -16,3 +16,5 @@ $ cd Async-Component
 $ npm install
 
 $ npm start 
+
+the backend expects the front-end to be on port 3000 (react default), in case your local machine turns other place change it at server/server.js.

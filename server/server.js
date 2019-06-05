@@ -19,7 +19,7 @@ const db = knex({
   connection: process.env.POSTGRES_URI
 });
 
-const whiteList = ['http://localhost:3001'];
+const whiteList = ['http://localhost:3000'];
 const corsOptions = {
 	origin: function(origin, callback) {
 		if (whiteList.indexOf(origin) !== -1) {
@@ -43,6 +43,6 @@ app.put('/image', auth.requireAuth, (req, res) => { image.handleImage(req, res, 
 app.put('/location', auth.requireAuth, (req, res) =>{location.handleLocation(req, res, db)})
 app.post('/imageurl', auth.requireAuth, (req, res) => { image.handleApiCall(req, res)})
 
-app.listen(process.env.PORT || 3000, ()=> {
-  console.log(`app is running on port ${process.env.PORT || 3000 }`);
+app.listen(process.env.PORT || 3001, ()=> {
+  console.log(`app is running on port ${process.env.PORT || 3001 }`);
 })

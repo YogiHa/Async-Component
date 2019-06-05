@@ -1,22 +1,22 @@
 import React from 'react';
 
 function Footer({router}){
-	const footerStyle = {
+const footerStyle = {
   fontSize: "3rem",
   color: "white",
   textAlign: "center",
-  padding: "4%",
+  padding: "1%",
   position: "fixed",
   left: "0",
   bottom: "16%",
-  height: "10%",
+  height: "0%",
   width: "100%"
 };
 
 const phantomStyle = {
   display: "fixed",
-  padding: "15%",
-  height: "25%",
+  padding: "7%",
+  height: "2%",
   width: "100%"
 };
    const handleClick = e => {

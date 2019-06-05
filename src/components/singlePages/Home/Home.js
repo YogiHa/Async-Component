@@ -2,9 +2,9 @@ import React, {useState, useEffect} from 'react';
 import Logo from './Logo';
 import './Home.css';
 function Home({user, setIsProfileOpen}){
-const [card, setCard] = useState(require('./cards/joker.png'));
+const [card, setCard] = useState(require('./cards/0.png'));
 useEffect(() =>{
-	if (user.entries < 2){setCard(require('./cards/0.png'));}
+	if (user.entries >= 15){setCard(require('./cards/joker.png'));}
 	else if (user.entries == 2) {setCard(require('./cards/2.png'))}
 	else if (user.entries == 3) {setCard(require('./cards/3.png'))}
 	else if (user.entries == 4) {setCard(require('./cards/4.png'))}
@@ -21,13 +21,14 @@ useEffect(() =>{
 	return() => console.log
 },[user])
    return (
-   	<div className="App">
+   	<div>
    	<div className="flex">
    	<Logo className="start" user={user} setIsProfileOpen={setIsProfileOpen} />
-   	<h1 className="f3 f2-m f1-l fw2 black-90 mv3" > Welcome {user.name}! </h1></div>
+   	<h1 className=" home1 f3 f2-m f1-l fw2 black-90 mv3" > Welcome {user.name}! </h1></div>
    	<div> <img src={card} className="my-bg" alt='card' /> 
-   <br/><h3> get points and achieve premium cards by sending requsts to the smart-brain/wethWhat</h3>
-   <br/><h2> SO WHAT ARE YOU WAITING FOR?? </h2></div>
+   <br/><h3 className="home2"> get points and achieve premium cards by sending requsts to the smart-brain/wethWhat</h3>
+   <br/><h2 className="home1"> SO WHAT ARE YOU WAITING FOR?? </h2></div> <br/><br/><br/><br/>
+<h5 className="home2"> press F5 for returning this page from the services </h5>
     </div>
   );
 }

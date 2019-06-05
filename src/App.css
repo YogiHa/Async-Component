@@ -23,3 +23,12 @@ text-align: center;
 .Tilt {
   background: linear-gradient(89deg, #FF5EDF 0%, #04C8DE 100%);
 }
+
+.flexform {
+  display: flex;
+  justify-content: center;
+}
+.note {
+  font-display: swap;
+  font-family: 'Anton', sans-serif;
+}

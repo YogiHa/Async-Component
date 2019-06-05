@@ -4,14 +4,16 @@ import Register from './components/forms/Register';
 import ToggledDropDown from './components/ToggledDropDown/ToggledDropDown'
 import Particles from 'react-particles-js';
 import Signin from './components/forms/Signin';
-import Modal from './components/Modal/Modal'
-import Profile from './components/Modal/Profile/Profile'
+import Modal from './components/modals/Modal'
+import Profile from './components/modals/Profile/Profile'
+import Welcome from './components/modals/Welcome/Welcome';
 import './App.css'
 
 function App() {
-	const [isLogedIn, setIsLogedIn] = useState(true);
+    const [isWelocmeOpen, setIsWelcomeOpen] = useState(true);
+  	const [isLogedIn, setIsLogedIn] = useState(false);
     const [isRegisterd, setIsRegisterd] = useState(false);
-    const [user, setUser] = useState({name: "john", entries: 12})
+    const [user, setUser] = useState({})
     const [isProfileOpen, setIsProfileOpen] = useState(false)
 
 //particlesjs-config until line 80
@@ -79,7 +81,7 @@ const particlesOptions = {
 }
 
 const fetchBackend = (token) => {
-   fetch('http://localhost:3000/signin' , {
+   fetch('http://localhost:3001/signin' , {
           method: 'post',
           headers: {
             'Content-Type' : 'application/json',
@@ -89,7 +91,7 @@ const fetchBackend = (token) => {
    .then(resp => resp.json())
    .then(data => {
    	    if (data.id) {
-      fetch(`http://localhost:3000/profile/${data.id}` , {
+      fetch(`http://localhost:3001/profile/${data.id}` , {
         method: 'get',
         headers: {
           'Content-Type': 'application/json',
@@ -99,6 +101,7 @@ const fetchBackend = (token) => {
       .then(resp => resp.json())
       .then(user => {
         if (user) {
+          setIsWelcomeOpen(false)
           setUser(user)
           setIsLogedIn(true)
         }
@@ -117,6 +120,10 @@ const fetchBackend = (token) => {
   return(<div className="App">
      <Particles className='particles' params={particlesOptions} />
     <ToggledDropDown className="end" setIsLogedIn={setIsLogedIn} setIsRegisterd={setIsRegisterd} isRegisterd={isRegisterd} isLogedIn={isLogedIn} setIsProfileOpen={setIsProfileOpen} setUser={setUser}/>
+ { isWelocmeOpen &&
+<Modal>
+<Welcome setIsWelcomeOpen={setIsWelcomeOpen}/>
+</Modal>}
 { isProfileOpen &&
 <Modal>
 <Profile setIsProfileOpen={setIsProfileOpen} user={user} setUser={setUser}/>

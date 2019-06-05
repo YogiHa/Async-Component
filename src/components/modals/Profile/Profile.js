@@ -12,11 +12,10 @@ function Profile({setIsProfileOpen, user, setUser}) {
     if (!data) {
       return
     } 
-    fetch(`http://localhost:3000/profile/${user.id}`, {
+    fetch(`http://localhost:3001/profile/${user.id}`, {
       method: 'post',
       headers: {
-        'Content-Type' : 'application/json' ,
-        'Authorization' : window.sessionStorage.getItem('token')} ,
+        'Content-Type' : 'application/json'} ,
       body: JSON.stringify({formInput: data})
     }).then(resp=>{
       setIsProfileOpen(false);

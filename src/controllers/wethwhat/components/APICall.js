@@ -14,6 +14,6 @@ function APICall({location, updateCount, updateList}){
     	return () => {ignore = false}    }
 	 else {fetchData();
     return () => { ignore = true; }	}}, [location])
-return (data.base === 'stations' ? <Display data={data}/> :  <div> <br/> <br/> waiting for searches </div>) }
+return (data.base === 'stations' ? <Display data={data}/> :  <div className='note'> <br/> <br/> waiting for searches </div>) }
 
 export default APICall;

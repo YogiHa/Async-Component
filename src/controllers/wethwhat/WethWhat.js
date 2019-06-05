@@ -12,10 +12,10 @@ const sendLocation = text => {
   setLocation({text}) 
         }
   const updateCount = event => {
-      fetch('http://localhost:3000/location', {
+      fetch('http://localhost:3001/location', {
             method: 'put',
             headers: {'Content-Type': 'application/json',
-        'Authorization' : window.sessionStorage.getItem('token')},
+           'Authorization' : window.sessionStorage.getItem('token')},
             body: JSON.stringify({
               id: user.id
             })
@@ -43,7 +43,7 @@ const sendLocation = text => {
   }
   
     return (
-      <div className="App">
+      <div>
       <Logo />
        <p className='f3 customweth'>
         {'displaying temprture by just clicking enter!'}
