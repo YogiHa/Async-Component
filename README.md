@@ -8,11 +8,17 @@ for activate on your localhost -
 
 3.
 
+
      $ cd Async-Component/server     
 
      $ docker-compose up     
 
-     4.In new terminal
+
+
+4. In new terminal
+
+
+
      $ cd Async-Component     
 
      $ npm install     
