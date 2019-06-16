@@ -19,7 +19,6 @@ return setToken(token, id)
 .then(()=>{ return{ sucsess: 'true' , userId: id , token }})
 .catch(console.log)
 }
-
 const handleRegister = (req, res, db, bcrypt) => {
   const { email, name, password } = req.body;
   if (!email || !name || !password) {
@@ -52,7 +51,6 @@ const handleRegister = (req, res, db, bcrypt) => {
   .then(session => res.json(session))
     .catch(err => Promise.reject('unable to register'))
 }
-
 module.exports = {
   handleRegister: handleRegister
 };

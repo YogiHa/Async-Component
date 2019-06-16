@@ -8,7 +8,6 @@ const handleLocation = (req, res, db) => {
   })
   .catch(err => res.status(400).json('unable to get entries'))
 }
-
 module.exports = {
   handleLocation
 }

@@ -17,7 +17,6 @@ function App() {
     const [user, setUser] = useState({})
     const [isProfileOpen, setIsProfileOpen] = useState(false)
 //particlesjs-config until line 80
-
 const particlesOptions = {
     "particles": {
     "number": {

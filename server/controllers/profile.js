@@ -25,7 +25,6 @@ const handleProfileUpdate = (req, res, db) => {
   
   .catch(err => res.status(400).json('uunable to get name'))
 }
-
 module.exports = {
   handleProfileGet,
   handleProfileUpdate

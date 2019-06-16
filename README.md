@@ -6,15 +6,19 @@ for activate on your localhost -
 
 2. add your own free API keys from openweathermap.com and clarifi.com at src/controllers/weather-hooks/components/APIcall and in server/controllers/image
 
-3.$ cd Async-Component/server
+3.
 
-$ docker-compose up
+     $ cd Async-Component/server     
 
-4.In new terminal
-$ cd Async-Component
+     $ docker-compose up     
 
-$ npm install
+     4.In new terminal
+     $ cd Async-Component     
 
-$ npm start 
+     $ npm install     
+
+     $ npm start 
+
+
 
 the backend expects the front-end to be on port 3000 (react default), in case your local machine turns other place change it at server/server.js.
