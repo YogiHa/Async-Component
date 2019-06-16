@@ -1,10 +1,31 @@
 import React from 'react';
+import Scroll from '../../Scroll'
 import AboutFooter from './AboutFooter'
 import ScrollableAnchor from 'react-scrollable-anchor';
 import './About.css';
 
 function About() {
-  return( <div className="App">
+
+const sectionStyle = {
+  padding: "0%",
+  position: "fixed",
+  left: "0",
+  bottom: "0%",
+  height: "85%",
+  width: "100%",
+ };
+
+const phantomStyle = {
+  display: "fixed",
+  padding: "0%",
+  height: "85%",
+  width: "100%",
+};
+
+	return( <div className="App">
+    <div style = {phantomStyle}>
+    <div style = {sectionStyle}>
+    <Scroll>
     <section className="cf w-100 h-45 pa2-ns">
     <h1 className="AboutHeader"> About </h1><br/><br/><br/>
     <article className="fl w-40 w-30-m  w-25-ns pa2-ns ">
@@ -92,7 +113,7 @@ function About() {
      <ScrollableAnchor id={'react'}>
             <div> <h2 className="h2About"> React </h2>
             <p className="pAbout">This app was built with React advanced javascript framework. <br/>
-             It's main idea is is the "Async-Component", an easy tool to implemaint, with great peroformance scale.
+             It's main idea is the "Async-Component", an easy tool to implemaint, with great peroformance scale.
              <br/> In first render-path, the server loads only what's nesseceary for first paint, and only afterwards keeps loading all other files.<br/>
               Another advantage of async-components concept, is it's diverse between states, each component holds it's own state, and a comunication between states is avialble in the App root.
               <br/>In this project there is also usuage of npm packages on top 'create-react-app' such as 'react-router', 'react-scrollable' and more  </p> </div>
@@ -144,9 +165,12 @@ function About() {
             With 100% in 'SEO', 100% in 'Best Practices' and 100% in 'Accessibility', this full Progresive Web App really made it in this test!
           </p></div>
           </ScrollableAnchor>
+          </Scroll>
+          </div>
+          </div>
   
   <AboutFooter />
-    </div>)
+      </div>)
 }
 
 export default About

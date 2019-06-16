@@ -1,9 +1,30 @@
 import React, { Component } from 'react';
 import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import Logo from './components/Logo/Logo';
+import Scroll from '../../components/Scroll'
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import './SmartBrain.css';
 
+ const sectionStyle = {
+  padding: "0%",
+  position: "fixed",
+  left: "0",
+  bottom: "0%",
+  height: "85%",
+  width: "100%",
+  overflowY: "auto",
+  overflowX: "hidden",
+  overflow: "hidden"
+};
+
+const phantomStyle = {
+  display: "fixed",
+  padding: "0%",
+  height: "85%",
+  width: "100%",
+  overflowY: "auto",
+  overflowX: "hidden"
+};
 
 const initialState = {
   input: '',
@@ -55,9 +76,11 @@ class SmartBrain extends Component {
       .then(response => response.json())
       .then(response => {
         if (response) {
+          console.log(response)
           fetch('http://localhost:3001/image', {
             method: 'put',
-            headers: {'Content-Type': 'application/json'},
+            headers: {'Content-Type': 'application/json',
+          'Authorization' : window.sessionStorage.getItem('token')},
             body: JSON.stringify({
               id: this.props.user.id
             })
@@ -73,12 +96,13 @@ class SmartBrain extends Component {
       })
       .catch(err => console.log('api call wasnt sucssesfull'));
   }
-
   
   render() {
     const {  imageUrl,  boxes } = this.state;
     return (
-      <div className="App SmartBrain">
+      <div className="App SmartBrain" style = {phantomStyle}>
+      <div style= {sectionStyle}>
+      <Scroll>
              <div>
               <Logo />
                <ImageLinkForm
@@ -88,6 +112,8 @@ class SmartBrain extends Component {
                  <FaceRecognition boxes={boxes} imageUrl={imageUrl} />
             </div>
           <div className="note"> <br/> <br/><br/> Due to Clarifai services, this feuatue handels only JPEG photos. </div>
+      </Scroll>
+      </div>
       </div>
     );
   }

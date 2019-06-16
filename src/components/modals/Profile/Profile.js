@@ -27,7 +27,7 @@ function Profile({setIsProfileOpen, user, setUser}) {
    
 	return(
 		<div className="profile-modal">
-		 <div className='tc grow bg-light-green br3 pa3 ma2 dib bw2 shadow-5'>
+		 <div className='tc bg-light-yellow br3 pa3 ma2 dib bw2 shadow-5'>
       <img alt='robots' src={`https://robohash.org/${name}`} />
       <div>
       <h1>{name}</h1>
@@ -48,7 +48,7 @@ function Profile({setIsProfileOpen, user, setUser}) {
               </div>
               </fieldset></div>
         <p>Total points: {user.entries}</p>
-        <a onClick={event=>{event.preventDefault(); setIsProfileOpen(false);}} className="f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-light-purple" href="#0">X</a>
+        <a onClick={event=>{event.preventDefault(); setIsProfileOpen(false);}} className="f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-light-red" href="#0">X</a>
       </div>
     </div>
 		</div>)

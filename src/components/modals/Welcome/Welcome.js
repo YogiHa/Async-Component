@@ -4,7 +4,7 @@ import './Welcome.css'
 function Welcome({setIsWelcomeOpen}) {
 	return(
 		<div onClick={event=>{event.preventDefault(); setIsWelcomeOpen(false);}} className="profile-modal">
-		 <div className='tc grow bg-purple br3 pa3 ma2 dib bw2 shadow-5'><div className="measure">
+		 <div className='tc grow bg-green br3 pa3 ma2 dib bw2 shadow-5'><div className="measure">
 	<h1 className="h1welcome">Welcome to my protfolio!</h1>
       <img alt='robots' src={`https://robohash.org/hagai`} /><br/><br/><br/>
          

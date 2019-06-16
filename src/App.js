@@ -4,8 +4,9 @@ import Register from './components/forms/Register';
 import ToggledDropDown from './components/ToggledDropDown/ToggledDropDown'
 import Particles from 'react-particles-js';
 import Signin from './components/forms/Signin';
-import Modal from './components/modals/Modal'
-import Profile from './components/modals/Profile/Profile'
+import Modal from './components/modals/Modal';
+import Profile from './components/modals/Profile/Profile';
+import Scroll from './components/Scroll'
 import Welcome from './components/modals/Welcome/Welcome';
 import './App.css'
 
@@ -15,7 +16,6 @@ function App() {
     const [isRegisterd, setIsRegisterd] = useState(false);
     const [user, setUser] = useState({})
     const [isProfileOpen, setIsProfileOpen] = useState(false)
-
 //particlesjs-config until line 80
 
 const particlesOptions = {
@@ -122,7 +122,9 @@ const fetchBackend = (token) => {
     <ToggledDropDown className="end" setIsLogedIn={setIsLogedIn} setIsRegisterd={setIsRegisterd} isRegisterd={isRegisterd} isLogedIn={isLogedIn} setIsProfileOpen={setIsProfileOpen} setUser={setUser}/>
  { isWelocmeOpen &&
 <Modal>
+<Scroll>
 <Welcome setIsWelcomeOpen={setIsWelcomeOpen}/>
+</Scroll>
 </Modal>}
 { isProfileOpen &&
 <Modal>

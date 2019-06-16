@@ -4,6 +4,7 @@ import Input from './components/Input/Input';
 import APICall from './components/APICall';
 import './WethWhat.css'
 import HistoryItem from './components/HistoryItem';
+import Scroll from '../../components/Scroll';
 
 function WethWhat({user}) {
 const [location, setLocation] = useState('');
@@ -41,9 +42,31 @@ const sendLocation = text => {
     newList.splice(index, 1);
     setList(newList);
   }
-  
-    return (
-      <div>
+   const sectionStyle = {
+  padding: "0%",
+  position: "fixed",
+  left: "0",
+  bottom: "0%",
+  height: "85%",
+  width: "100%",
+  overflowY: "auto",
+  overflowX: "hidden",
+  overflow: "hidden"
+};
+
+const phantomStyle = {
+  display: "fixed",
+  padding: "0%",
+  height: "85%",
+  width: "100%",
+  overflowY: "auto",
+  overflowX: "hidden"
+};
+
+  return( 
+    <div style = {phantomStyle}>
+    <div style = {sectionStyle}>
+    <Scroll>
       <Logo />
        <p className='f3 customweth'>
         {'displaying temprture by just clicking enter!'}
@@ -62,7 +85,8 @@ const sendLocation = text => {
         ))}
      </div> <br /> <br />
      <p> for more information <a href="https://github.com/YogiHa/weather-hooks"> https://github.com/YogiHa/weather-hooks</a> </p>
-   
+      </Scroll>
+      </div>
       </div>
     );  }
 export default WethWhat;

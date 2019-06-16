@@ -1,5 +1,12 @@
 import React from 'react';
-import './Forms.css'
+import './Forms.css';
+
+ const  MsgError = () =>  (
+  <div>
+  <span>
+invalid regisrertion
+  </span>
+  </div>);
 
 class Register extends React.Component {
   constructor(props) {
@@ -7,8 +14,13 @@ class Register extends React.Component {
     this.state = {
       email: '',
       password: '',
-      name: ''
+      name: '',
+      isHide: true
     }
+  }
+
+  setIsHide = boolean => {
+  this.setState({isHide: boolean})
   }
 
   onNameChange = (event) => {
@@ -42,7 +54,7 @@ class Register extends React.Component {
           if (data.sucsess==="true") {
           this.saveAuthToken(data.token)
           this.props.fetchBackend(data.token)
-        }
+        } else (this.setIsHide(false))
       })
   }
 
@@ -89,12 +101,13 @@ class Register extends React.Component {
             </fieldset>
             <div className="">
               <input
-                onClick={this.onSubmitRegister}
+                onClick={()=>{this.setIsHide(true); this.onSubmitRegister()}}
                 className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
                 type="submit"
                 value="Register"
               />
             </div>
+           {!this.state.isHide && <MsgError/>}
           </div>
         </main>
       </article>

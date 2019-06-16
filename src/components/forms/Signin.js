@@ -1,13 +1,24 @@
 import React from 'react';
-import './Forms.css'
+import './Forms.css';
+
+const  MsgError = () =>  (
+  <div>
+  <span>
+invalid user
+  </span>
+  </div>);
 
 class Signin extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       signInEmail: '',
-      signInPassword: ''
+      signInPassword: '',
+      isHide: true
     }
+  }
+  setIsHide = boolean => {
+  this.setState({isHide: boolean})
   }
 
   saveAuthToken = (token) => {
@@ -37,7 +48,7 @@ class Signin extends React.Component {
           if (data.sucsess==="true") {
           this.saveAuthToken(data.token)
           this.props.fetchBackend(data.token)
-        }
+        } else (this.setIsHide(false))
       })
   }
 
@@ -73,7 +84,7 @@ class Signin extends React.Component {
             </fieldset>
             <div className="">
               <input
-                onClick={this.onSubmitSignIn}
+                onClick={()=>{this.setIsHide(true); this.onSubmitSignIn()}}
                 className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib hover-black"
                 type="submit"
                 value="Sign in"
@@ -81,6 +92,7 @@ class Signin extends React.Component {
             </div>
             <div className="lh-copy mt3">
             </div>
+           {!this.state.isHide && <MsgError/>}
           </div>
         </main>
        </article>
