@@ -9,13 +9,16 @@ for activate on your localhost -
 3.
 
 
-     $ cd Async-Component/server     
+     $ cd Async-Component/server 
 
-     $ docker-compose up     
+     $ mpm install    
+
+     $ (sudo) docker-compose up     
 
 
 
 4. In new terminal
+
 
 
 
@@ -24,6 +27,7 @@ for activate on your localhost -
      $ npm install     
 
      $ npm start 
+
 
 
 
