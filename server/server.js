@@ -42,6 +42,8 @@ app.post('/profile/:id', auth.requireAuth, (req, res) =>{ profile.handleProfileU
 app.put('/image', auth.requireAuth, (req, res) => { image.handleImage(req, res, db)})
 app.put('/location', auth.requireAuth, (req, res) =>{location.handleLocation(req, res, db)})
 app.post('/imageurl', auth.requireAuth, (req, res) => { image.handleApiCall(req, res)})
+app.post('/locationurl', auth.requireAuth, (req, res) =>{location.handleAPI(req, res)})
+
 
 app.listen(process.env.PORT || 3001, ()=> {
   console.log(`app is running on port ${process.env.PORT || 3001 }`);

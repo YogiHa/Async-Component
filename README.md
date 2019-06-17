@@ -4,7 +4,7 @@ for activate on your localhost -
 1. clone this repo
 
 
-2. add your own free API keys from openweathermap.com and clarifi.com at src/controllers/weather-hooks/components/APIcall and in server/controllers/image
+2. add your own free API keys from openweathermap.com and clarifi.com at server/controllers/location and in server/controllers/image
 
 3.
 
