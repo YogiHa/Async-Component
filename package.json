@@ -4,7 +4,6 @@
   "private": true,
   "homepage": "https://YogiHa.github.io/Async-Component",
   "dependencies": {
-    "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
     "gh-pages": "^2.0.1",
     "react": "^16.8.6",
