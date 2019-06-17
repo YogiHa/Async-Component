@@ -1,5 +1,4 @@
 import React, { useState , useEffect } from "react";
-import axios from 'axios';
 import Display from './Display';
 
 function APICall({location, updateCount, updateList}){
@@ -16,11 +15,11 @@ function APICall({location, updateCount, updateList}){
       })
 	  .then(response => response.json())
       .then(response => {
-      	console.log(response.base, response.name, response.main.temp)
-      	if (!response.base === 'stations') {setData([{base: 'nope'}]) } else {setData(response); updateCount(); updateList(location.text)}
+      	if (response.base === 'stations'){setData(response); updateCount(); updateList(location.text)}
+        else {setData([])}
 
 	})
-      .catch(err => setData([]))
+      .catch(err => console.log)
   }
 	useEffect(()=> {
 		fetchBE(location.text);
