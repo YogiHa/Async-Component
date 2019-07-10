@@ -6,7 +6,7 @@ import './WethWhat.css'
 import HistoryItem from './components/HistoryItem';
 import Scroll from '../../components/Scroll';
 
-function WethWhat({user}) {
+function WethWhat({user, setIsProfileOpen}) {
 const [location, setLocation] = useState('');
 const [list, setList] = useState([]);
 const sendLocation = text => {
@@ -67,7 +67,7 @@ const phantomStyle = {
     <div style = {phantomStyle}>
     <div style = {sectionStyle}>
     <Scroll>
-      <Logo />
+      <Logo  setIsProfileOpen={setIsProfileOpen} />
        <p className='f3 customweth'>
         {'displaying temprture by just clicking enter!'}
       </p><br/>

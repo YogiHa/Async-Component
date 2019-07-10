@@ -6,19 +6,7 @@ function Home({user, setIsProfileOpen}){
 const [card, setCard] = useState(require('./cards/0.png'));
 useEffect(() =>{
 	if (user.entries >= 15){setCard(require('./cards/joker.png'));}
-	else if (user.entries == 2) {setCard(require('./cards/2.png'))}
-	else if (user.entries == 3) {setCard(require('./cards/3.png'))}
-	else if (user.entries == 4) {setCard(require('./cards/4.png'))}
-	else if (user.entries == 5) {setCard(require('./cards/5.png'))}
-	else if (user.entries == 6) {setCard(require('./cards/6.png'))}
-	else if (user.entries == 7) {setCard(require('./cards/7.png'))}
-	else if (user.entries == 8) {setCard(require('./cards/8.png'))}
-	else if (user.entries == 9) {setCard(require('./cards/9.png'))}
-	else if (user.entries == 10) {setCard(require('./cards/10.png'))}
-	else if (user.entries == 11) {setCard(require('./cards/jack.png'))}
-	else if (user.entries == 12) {setCard(require('./cards/queen.png'))}
-	else if (user.entries == 13) {setCard(require('./cards/king.png'))}
-	else if (user.entries == 14) {setCard(require('./cards/ace.png'))}
+	else {setCard(require(`./cards/${user.entries}.png`))}
 	return() => console.log
 },[user])
   const sectionStyle = {

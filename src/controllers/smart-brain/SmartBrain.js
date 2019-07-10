@@ -104,7 +104,7 @@ class SmartBrain extends Component {
       <div style= {sectionStyle}>
       <Scroll>
              <div>
-              <Logo />
+              <Logo setIsProfileOpen={this.props.setIsProfileOpen}/>
                <ImageLinkForm
                 onInputChange={this.onInputChange}
                 onButtonSubmit={this.onButtonSubmit}

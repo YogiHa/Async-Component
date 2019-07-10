@@ -6,18 +6,23 @@ for activate on your localhost -
 
 2. add your own free API keys from openweathermap.com and clarifi.com at server/controllers/location and in server/controllers/image
 
-3.
+3. the backend of the application while developing is running under Docker Compose. Installation:
+https://docs.docker.com/compose/install/
+
+4.
+
 
 
      $ cd Async-Component/server 
 
-     $ mpm install    
+     $ npm install    
 
      $ (sudo) docker-compose up     
 
 
 
-4. In new terminal
+5. In new terminal
+
 
 
 
@@ -27,6 +32,7 @@ for activate on your localhost -
      $ npm install     
 
      $ npm start 
+
 
 
 
