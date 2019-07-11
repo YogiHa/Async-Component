@@ -66,7 +66,7 @@ class Signin extends React.Component {
                   className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100 hover-black"
                   type="email"
                   name="email-address"
-                  id="email-address"
+                  id="email_address"
                   onChange={this.onEmailChange}
                 />
               </div>
@@ -88,6 +88,7 @@ class Signin extends React.Component {
                 className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib hover-black"
                 type="submit"
                 value="Sign in"
+                id="sign_in"
               />
             </div>
             <div className="lh-copy mt3">

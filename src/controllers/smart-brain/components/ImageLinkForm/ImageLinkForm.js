@@ -9,8 +9,9 @@ const ImageLinkForm = ({ onInputChange, onButtonSubmit }) => {
       </p><br/>
       <div className='center'>
         <div className='formimagelink center pa4 br3 shadow-5'>
-          <input placeholder= 'jpeg url photos goes here' aria-label= 'type image adress here' className='f4 pa2 w-70 center' type='text' onChange={onInputChange}/>
+          <input id="smartBrainInput" placeholder= 'jpeg url photos goes here' aria-label= 'type image adress here' className='f4 pa2 w-70 center' type='text' onChange={onInputChange}/>
           <button
+            id="smartBrainSubmit"
             className='w-30 grow f4 link ph3 pv2 dib white bg-light-purple'
             onClick={onButtonSubmit}
           >Detect</button>

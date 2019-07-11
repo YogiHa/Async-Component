@@ -22,7 +22,7 @@ const phantomStyle = {
   width: "100%",
 };
 
-	return( <div className="App">
+  return( <div className="App">
     <div style = {phantomStyle}>
     <div style = {sectionStyle}>
     <Scroll>
@@ -101,7 +101,7 @@ const phantomStyle = {
       </a>
     </article>
     <article className="fl w-40 w-30-m  w-25-ns pa2-ns">
-     <a href="https://github.com/YogiHa/Async-Component" className="ph2 ph0-ns pb3 link db">
+     <a id="gitHubLink" href="https://github.com/YogiHa/Async-Component" className="ph2 ph0-ns pb3 link db">
       <div className="aspect-ratio aspect-ratio--1x1">
         <img src={require('./logos/github.png')}
         className="db bg-center cover aspect-ratio--object" alt='logo'/>

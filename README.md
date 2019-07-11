@@ -1,6 +1,8 @@
-A full-stack web app, front-end build with react, back-end with dockerize node server and postgres database.
+A full-stack web app, front-end build with React.js, back-end with dockerize node server and postgres database.
+
 
 for activate on your localhost -
+
 1. clone this repo
 
 
@@ -38,3 +40,12 @@ https://docs.docker.com/compose/install/
 
 
 the backend expects the front-end to be on port 3000 (react default), in case your local machine turns other place change it at server/server.js.
+
+
+V 3 -
+
+added a selenium webdriver for running test (*config for manipulate chrome*) by:
+
+
+     $ cd Async-Component
+     $ npm run test

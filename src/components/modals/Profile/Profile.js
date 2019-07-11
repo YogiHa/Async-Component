@@ -14,8 +14,8 @@ function Profile({setIsProfileOpen, user, setUser}) {
     } 
     fetch(`http://localhost:3001/profile/${user.id}`, {
       method: 'post',
-      headers: {
-        'Content-Type' : 'application/json'} ,
+     headers: {'Content-Type': 'application/json',
+               'Authorization' : window.sessionStorage.getItem('token')},
       body: JSON.stringify({formInput: data})
     }).then(resp=>{
       setIsProfileOpen(false);
@@ -41,10 +41,10 @@ function Profile({setIsProfileOpen, user, setUser}) {
                   className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-70 hover-black"
                   type="text"
                   name="name"
-                  id="name"
+                  id="changename"
                   placeholder={`arn't ${user.name}? change it here`}
                 />
-               <a  onClick={event=>{event.preventDefault();onSendingForm({name})}} className="f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-dark-green" href="#0">V</a>
+               <a id="entername" onClick={event=>{event.preventDefault();onSendingForm({name})}} className="f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-dark-green" href="#0">V</a>
               </div>
               </fieldset></div>
         <p>Total points: {user.entries}</p>

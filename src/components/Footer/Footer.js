@@ -31,8 +31,8 @@ const phantomStyle = {
       <div style={phantomStyle} />
       <div style={footerStyle}>
       <div className="ph4">
-     <button value="SmartBrain" onClick={handleClick} style={(route==="SmartBrain") ? disabled : null} className="pa3 f5 link dim ph3 pv2 mb2 dib white bg-purple" href="#0">Smart-Brain</button>
-     <button value='WethWhat' onClick={handleClick} style={(route==="WethWhat") ? disabled : null} className="pa3 f5 link dim ph3 pv2 mb2 dib white bg-purple" href="#0">WethWhat?</button>
+     <button id="SmartBrain" value="SmartBrain" onClick={handleClick} style={(route==="SmartBrain") ? disabled : null} className="pa3 f5 link dim ph3 pv2 mb2 dib white bg-purple" href="#0">Smart-Brain</button>
+     <button id="WethWhat" value='WethWhat' onClick={handleClick} style={(route==="WethWhat") ? disabled : null} className="pa3 f5 link dim ph3 pv2 mb2 dib white bg-purple" href="#0">WethWhat?</button>
      </div> </div>
     </div>
   );
