@@ -58,9 +58,6 @@ describe("Home Page", () => {
           await driver.sleep(1000);
  })
 })
-  // it("Should Sign in", function() {
-    
-  // })
 
 describe("App usage", () => {
   it("Should check if user can change his name", async () => {

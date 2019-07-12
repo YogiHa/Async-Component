@@ -101,6 +101,15 @@ const phantomStyle = {
       </a>
     </article>
     <article className="fl w-40 w-30-m  w-25-ns pa2-ns">
+     <a href="#selenium" className="ph2 ph0-ns pb3 link db">
+      <div className="aspect-ratio aspect-ratio--1x1">
+        <img src={require('./logos/selenium.png')}
+        className="db bg-center cover aspect-ratio--object" alt='logo'/>
+      </div>
+        <h3 className="f5 f4-ns mb0 black-90 h3about">Selenium</h3>
+      </a>
+    </article>
+    <article className="fl w-40 w-30-m  w-25-ns pa2-ns">
      <a id="gitHubLink" href="https://github.com/YogiHa/Async-Component" className="ph2 ph0-ns pb3 link db">
       <div className="aspect-ratio aspect-ratio--1x1">
         <img src={require('./logos/github.png')}
@@ -164,7 +173,14 @@ const phantomStyle = {
             this great chrome extension helps to determniate up to what degree of 2019 standarts this website complies. <br/>
             With 100% in 'SEO', 100% in 'Best Practices' and 100% in 'Accessibility', this full Progresive Web App really made it in this test!
           </p></div>
-          </ScrollableAnchor>
+          </ScrollableAnchor><br/><br/>
+          <ScrollableAnchor id={'selenium'}>
+          <div><h2 className="h2About">Selenium</h2><p className="pAbout">
+            Selenium is a portable framework for  automation testing web applications. <br/>
+            While developung, by typing {`{ $ npm run test }`} a robot will check every aspect in the web app, and in case of adding code and functionalities, <br/>
+            a quick test can ansure that nothing built so far have broken.
+          </p></div>
+          </ScrollableAnchor>          
           </Scroll>
           </div>
           </div>
