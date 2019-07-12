@@ -8,17 +8,28 @@ invalid user
   </span>
   </div>);
 
+const Loading = () => (
+  <div>
+  <img src={require('./loading.svg') } />
+  </div>
+)
+
 class Signin extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       signInEmail: '',
       signInPassword: '',
-      isHide: true
+      isHide: true,
+      isLoading: false
     }
   }
   setIsHide = boolean => {
   this.setState({isHide: boolean})
+  }
+
+  setIsLoading = boolean => {
+  this.setState({isLoading: boolean})
   }
 
   saveAuthToken = (token) => {
@@ -35,6 +46,7 @@ class Signin extends React.Component {
   }
 
   onSubmitSignIn = () => {
+    this.setIsLoading(true);
     fetch('http://localhost:3001/signin', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
@@ -45,10 +57,13 @@ class Signin extends React.Component {
     })
       .then(response => response.json())
       .then(data => {
+          this.setIsLoading(false);
           if (data.sucsess==="true") {
           this.saveAuthToken(data.token)
           this.props.fetchBackend(data.token)
-        } else (this.setIsHide(false))
+        } else { 
+              this.setIsLoading(false);
+              this.setIsHide(false) }
       })
   }
 
@@ -93,6 +108,7 @@ class Signin extends React.Component {
             </div>
             <div className="lh-copy mt3">
             </div>
+           {this.state.isLoading &&<Loading />}
            {!this.state.isHide && <MsgError/>}
           </div>
         </main>

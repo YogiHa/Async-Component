@@ -8,6 +8,12 @@ invalid regisrertion
   </span>
   </div>);
 
+ const Loading = () => (
+  <div>
+  <img src={require('./loading.svg') } />
+  </div>
+)
+
 class Register extends React.Component {
   constructor(props) {
     super(props);
@@ -15,12 +21,17 @@ class Register extends React.Component {
       email: '',
       password: '',
       name: '',
-      isHide: true
+      isHide: true,
+      isLoading: false
     }
   }
 
   setIsHide = boolean => {
   this.setState({isHide: boolean})
+  }
+
+  setIsLoading = boolean => {
+  this.setState({isLoading: boolean})
   }
 
   onNameChange = (event) => {
@@ -40,6 +51,7 @@ class Register extends React.Component {
   }
 
   onSubmitRegister = () => {
+    this.setIsLoading(true);
     fetch('http://localhost:3001/register', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
@@ -52,9 +64,12 @@ class Register extends React.Component {
       .then(response => response.json())
      .then(data => {
           if (data.sucsess==="true") {
+          this.setIsLoading(false);
           this.saveAuthToken(data.token)
           this.props.fetchBackend(data.token)
-        } else (this.setIsHide(false))
+        } else {
+          this.setIsLoading(false);
+          this.setIsHide(false)}
       })
   }
 
@@ -108,6 +123,7 @@ class Register extends React.Component {
                 id="register"
               />
             </div>
+           {this.state.isLoading &&<Loading />}
            {!this.state.isHide && <MsgError/>}
           </div>
         </main>
